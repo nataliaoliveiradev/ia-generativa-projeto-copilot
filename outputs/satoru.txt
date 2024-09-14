@@ -1,0 +1,14 @@
+from PIL import Image
+import pytesseract
+
+# Definir o caminho para a imagem
+image_path = 'inputs/satoru.png'
+
+# Abrir o arquivo de imagem
+img = Image.open(image_path)
+
+# Usar pytesseract para realizar OCR na imagem
+text = pytesseract.image_to_string(img)
+
+# Exibir o texto reconhecido no console
+print(text)

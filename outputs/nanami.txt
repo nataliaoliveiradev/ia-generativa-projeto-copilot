@@ -1,0 +1,15 @@
+import pytesseract
+from PIL import Image
+
+# Caminho para o executável do Tesseract
+pytesseract.pytesseract.tesseract_cmd = r'caminho_para_tesseract.exe'
+
+# Abrir a imagem a partir do caminho fornecido
+image_path = 'inputs/nanami.png'
+img = Image.open(image_path)
+
+# Usar pytesseract para realizar OCR na imagem
+text = pytesseract.image_to_string(img)
+
+# Exibir o texto reconhecido no console
+print(text)
